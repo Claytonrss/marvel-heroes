@@ -5,14 +5,14 @@ h1 {
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 0px;
-  color: $font-color;
+  color: $dark-smoke;
 }
 
 .search {
   margin-top: 1rem;
   label {
     font-size: 1rem;
-    color: $font-color;
+    color: $dark-smoke;
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
@@ -35,7 +35,7 @@ h1 {
       &::placeholder {
         font-style: italic;
         font-family: "PT Sans Caption", sans-serif;
-        color: $font-color-2;
+        color: $smoke;
       }
       &:focus {
         border: 0;
@@ -48,7 +48,7 @@ h1 {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #fff;
+      background-color: $white;
       border: 0;
       position: relative;
       left: -4px;
@@ -75,7 +75,7 @@ h1 {
       display: block;
       text-align: left;
       font-size: 0.75rem;
-      color: $font-color-2;
+      color: $smoke;
     }
   }
 
@@ -84,13 +84,12 @@ h1 {
     gap: 8px;
 
     .character-card {
-      background: #ffffff 0% 0% no-repeat padding-box;
+      background-color: $white;
       box-shadow: 0px 0px 5px #00000033;
       border-radius: 4px;
       padding: 20px 24px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      transition: 0.3s all ease-in-out;
       cursor: pointer;
 
       &:hover {
@@ -112,23 +111,82 @@ h1 {
         span {
           font-size: 1rem;
           font-weight: bold;
-          color: $font-color;
+          color: $dark-smoke;
         }
       }
 
       .series,
       .events {
         font-size: 0.875rem;
-        color: $font-color;
+        color: $dark-smoke;
         display: flex;
         flex-direction: column;
         justify-content: center;
 
         p {
-          margin-bottom: 5px;
           max-width: 80%;
+          line-height: 19px;
         }
       }
+    }
+  }
+}
+
+.paginate-container {
+  background-color: $white;
+  padding: 40px;
+  margin-top: 24px;
+
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 16px;
+  }
+
+  .paginate-buttons,
+  .next-buttons,
+  .prev-buttons {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 16px;
+    button {
+      border: none;
+      outline: none;
+      width: 40px;
+      height: 32px;
+      background-color: $snow;
+      border: 2px solid $dark-snow;
+      opacity: 1;
+      text-align: center;
+      font-size: 14px;
+      color: $dark-smoke;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &.active {
+        background-color: $dark-blue;
+        border: 1px solid $dark-blue;
+        color: $white;
+      }
+
+      &:hover {
+        background-color: rgba($dark-blue, 0.7);
+        border: 1px solid rgba($dark-blue, 0.7);
+        color: $white;
+      }
+    }
+  }
+
+  .next-buttons,
+  .prev-buttons {
+    gap: 0px;
+    button {
+      width: 28px;
+      height: 32px;
+      background-color: transparent;
+      border: 0;
     }
   }
 }

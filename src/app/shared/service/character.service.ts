@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Md5 } from 'ts-md5/dist/md5';
@@ -19,7 +19,7 @@ export class CharacterService {
     const ts = new Date().getTime();
     const stringToHash = ts + this.secretKey + this.publicKey;
     const hash = md5.appendStr(stringToHash).end();
-    let url = `${this.apiUrl}?ts=${ts}&apikey=${this.publicKey}&hash=${hash}`;
+    let url = `${this.apiUrl}?ts=${ts}&apikey=${this.publicKey}&hash=${hash}&limit=10`;
 
     for (let i = 0; i < params.length; i++) {
       url += `&${params[i]}`;
