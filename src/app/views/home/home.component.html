@@ -1,1 +1,45 @@
-<p>home works!</p>
+<app-container>
+  <header>
+    <h1>Busca de personagens</h1>
+    <div class="search">
+      <label for="txt_character">Nome do personagem</label>
+      <div class="input-container">
+        <input type="text" id="txt_character" placeholder="Value">
+        <button><img src="/assets/images/icons/search.svg" alt="Buscar"></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="character-list-container">
+    <header>
+      <span>Personagem</span>
+      <span>Séries</span>
+      <span>Eventos</span>
+    </header>
+
+    <div class="character-list">
+
+      <div class="character-card" *ngFor="let character of characters">
+        <div class="character">
+          <!-- <div class="thumb" ="``"></div> -->
+          <div class="thumb" [style.background-image]="'url(' + character.thumbnail.path + '/portrait_small.' + character.thumbnail.extension"></div>
+          <span>{{character.name}}</span>
+        </div>
+        <div class="series">
+          <p *ngFor="let item of character.series.items.slice(0, 3)">{{item.name}}</p>           
+        </div>
+        <div class="events">
+          <p *ngFor="let event of character.events.items.slice(0, 3)">{{event.name}}</p>           
+        </div>
+      </div>
+
+    </div>
+
+
+
+    
+
+  </section>
+
+
+</app-container>

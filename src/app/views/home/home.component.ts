@@ -13,13 +13,15 @@ export class HomeComponent implements OnInit {
   constructor(public characterService: CharacterService) {}
 
   ngOnInit(): void {
-    this.getCharacters();
+    this.getAllCharacters();
   }
 
-  getCharacters() {
-    this.characterService.getResponsePageable().subscribe((data) => {
-      console.log(data);
-      this.characters = data.results;
-    });
+  getAllCharacters() {
+    this.characterService
+      .getResponseMarvel(['limit=10'])
+      .subscribe((response) => {
+        console.log(response.data);
+        this.characters = response.data.results;
+      });
   }
 }

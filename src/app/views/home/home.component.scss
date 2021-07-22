@@ -1,0 +1,134 @@
+@import "../../shared/scss/variables";
+
+h1 {
+  margin-top: 40px;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: $font-color;
+}
+
+.search {
+  margin-top: 1rem;
+  label {
+    font-size: 1rem;
+    color: $font-color;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .input-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    input {
+      width: 262px;
+      height: 32px;
+      border: none;
+      outline: none;
+      border-radius: 0.25rem;
+      padding: 0.5rem 1rem;
+      font-family: "PT Sans Caption", sans-serif;
+
+      &::placeholder {
+        font-style: italic;
+        font-family: "PT Sans Caption", sans-serif;
+        color: $font-color-2;
+      }
+      &:focus {
+        border: 0;
+        outline: none;
+      }
+    }
+
+    button {
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      border: 0;
+      position: relative;
+      left: -4px;
+      border-radius: 0.25rem;
+      padding: 4px 16px;
+      cursor: pointer;
+
+      img {
+        margin: 3px;
+      }
+    }
+  }
+}
+
+.character-list-container {
+  margin-top: 40px;
+
+  header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 8px;
+    padding: 0px 24px;
+    span {
+      display: block;
+      text-align: left;
+      font-size: 0.75rem;
+      color: $font-color-2;
+    }
+  }
+
+  .character-list {
+    display: grid;
+    gap: 8px;
+
+    .character-card {
+      background: #ffffff 0% 0% no-repeat padding-box;
+      box-shadow: 0px 0px 5px #00000033;
+      border-radius: 4px;
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      transition: 0.3s all ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0px 0px 5px #222;
+      }
+
+      .character {
+        display: flex;
+        align-items: center;
+
+        .thumb {
+          margin-right: 24px;
+          width: 48px;
+          height: 48px;
+          background-size: cover;
+          border-radius: 4px;
+        }
+
+        span {
+          font-size: 1rem;
+          font-weight: bold;
+          color: $font-color;
+        }
+      }
+
+      .series,
+      .events {
+        font-size: 0.875rem;
+        color: $font-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        p {
+          margin-bottom: 5px;
+          max-width: 80%;
+        }
+      }
+    }
+  }
+}

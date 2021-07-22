@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ContainerComponent } from './views/container/container.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, ContainerComponent],
   imports: [HttpClientModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
