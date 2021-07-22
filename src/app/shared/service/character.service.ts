@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Md5 } from 'ts-md5/dist/md5';
-import { ResponsePageable } from '../models/responsePageable.model';
+import { ResponseMarvel } from '../models/responseMarvel.model';
 
 @Injectable({
   providedIn: 'root',
@@ -14,12 +14,17 @@ export class CharacterService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getResponsePageable(): Observable<ResponsePageable> {
+  public getResponseMarvel(params: string[] = []): Observable<ResponseMarvel> {
     const md5 = new Md5();
     const ts = new Date().getTime();
     const stringToHash = ts + this.secretKey + this.publicKey;
     const hash = md5.appendStr(stringToHash).end();
-    const url = `${this.apiUrl}?ts=${ts}&apikey=${this.publicKey}&hash=${hash}`;
-    return this.httpClient.get<ResponsePageable>(url);
+    let url = `${this.apiUrl}?ts=${ts}&apikey=${this.publicKey}&hash=${hash}`;
+
+    for (let i = 0; i < params.length; i++) {
+      url += `&${params[i]}`;
+    }
+
+    return this.httpClient.get<ResponseMarvel>(url);
   }
 }
