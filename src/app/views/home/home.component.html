@@ -4,8 +4,8 @@
     <div class="search">
       <label for="txt_character">Nome do personagem</label>
       <div class="input-container">
-        <input type="text" id="txt_character" placeholder="Search">
-        <button><img src="/assets/images/icons/search.svg" alt="Buscar"></button>
+        <input type="text" id="txt_character" placeholder="Search" (keyup)="onKeyUp($event)">
+        <button (click)="searchCharacters()"><img src="/assets/images/icons/search.svg" alt="Buscar" ></button>
       </div>
     </div>
   </header>
@@ -13,8 +13,8 @@
   <section class="character-list-container">
     <header>
       <span>Personagem</span>
-      <span>Séries</span>
-      <span>Eventos</span>
+      <span class="sm-hide">Séries</span>
+      <span class="sm-hide">Eventos</span>
     </header>
 
     <div class="character-list">
@@ -25,10 +25,10 @@
           <div class="thumb" [style.background-image]="'url(' + character.thumbnail.path + '/portrait_small.' + character.thumbnail.extension"></div>
           <span>{{character.name}}</span>
         </div>
-        <div class="series">
+        <div class="series sm-hide">
           <p *ngFor="let item of character.series.items.slice(0, 3)">{{item.name}}</p>           
         </div>
-        <div class="events">
+        <div class="events sm-hide">
           <p *ngFor="let event of character.events.items.slice(0, 3)">{{event.name}}</p>           
         </div>
       </div>
@@ -40,7 +40,7 @@
 </app-container>
 <div class="paginate-container">
 <app-container>
-  <div class="buttons-container">
+  <div class="buttons-container" *ngIf="qtdPages">
     <div class="prev-buttons">
       <button (click)="changePage(1)"><<</button>
       <button (click)="changePage(currentPage -1)"><</button>
