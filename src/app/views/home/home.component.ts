@@ -29,9 +29,10 @@ export class HomeComponent implements OnInit {
         this.currentPage = 1;
       } else {
         this.currentPage = Math.ceil(
-          response.data.offset / response.data.limit
+          response.data.offset / response.data.limit + 1
         );
       }
+
       this.updatePages();
     });
   }
@@ -47,10 +48,36 @@ export class HomeComponent implements OnInit {
   }
 
   changePage(page: number) {
+    const params = [];
+
     if (this.currentPage !== page && page > 0) {
       this.currentPage = page;
-      const offset = page * this.limit;
-      this.getCharacters([`offset=${offset}`]);
+      const offset = page * this.limit - this.limit;
+      params.push(`offset=${offset}`);
+    }
+
+    const name = (<HTMLInputElement>document.querySelector('#txt_character'))
+      .value;
+    if (name != '') {
+      params.push(`nameStartsWith=${name}`);
+    }
+
+    this.getCharacters(params);
+  }
+
+  searchCharacters() {
+    const name = (<HTMLInputElement>document.querySelector('#txt_character'))
+      .value;
+    if (name != '') {
+      this.getCharacters([`nameStartsWith=${name}`]);
+    } else {
+      this.getCharacters();
+    }
+  }
+
+  onKeyUp(event: KeyboardEvent) {
+    if (event.key === 'Enter' || (<HTMLInputElement>event.target).value == '') {
+      this.searchCharacters();
     }
   }
 }

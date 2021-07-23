@@ -112,6 +112,7 @@ h1 {
           font-size: 1rem;
           font-weight: bold;
           color: $dark-smoke;
+          max-width: 80%;
         }
       }
 
@@ -173,7 +174,7 @@ h1 {
 
       &:hover {
         background-color: rgba($dark-blue, 0.7);
-        border: 1px solid rgba($dark-blue, 0.7);
+        border: 0;
         color: $white;
       }
     }
@@ -187,6 +188,39 @@ h1 {
       height: 32px;
       background-color: transparent;
       border: 0;
+    }
+  }
+}
+
+// MOBILE
+@media (max-width: 600px) {
+  h1 {
+    text-align: center;
+  }
+
+  .search {
+    text-align: center;
+
+    .input-container {
+      justify-content: center;
+    }
+  }
+
+  .character-list-container {
+    header {
+      padding: 0;
+      grid-template-columns: 1fr;
+      .sm-hide {
+        display: none !important;
+      }
+    }
+    .character-list {
+      .character-card {
+        grid-template-columns: 1fr;
+        .sm-hide {
+          display: none !important;
+        }
+      }
     }
   }
 }
