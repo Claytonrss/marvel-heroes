@@ -65,11 +65,13 @@ header {
   h2 {
     font-size: 1.5rem;
     margin: 1rem 0;
+    text-align: center;
   }
   .comics {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem 1rem;
+    justify-content: center;
 
     .comic {
       text-align: center;
@@ -86,12 +88,17 @@ header {
 
       h3 {
         margin-bottom: 1rem;
+        text-align: center;
       }
 
       img {
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         border-radius: 0.5rem;
         overflow: hidden;
+      }
+
+      &:hover {
+        transform: scale(1.1);
       }
     }
   }

@@ -1,27 +1,51 @@
-# MarvelHeroes
+# TodoDev - A sua lista de tarefas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
+## Demonstração
 
-## Development server
+![](marvel-heroes-print-01.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![](marvel-heroes-print-02.png)
 
-## Code scaffolding
+## Tecnologias utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- CSS3
+- SASS
+- HTML5
+- Angular
+- Javascript
+- Typescript
+- API REST
 
-## Build
+## Pré-requisitos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: Git, Node.js, npm package manager e o Angular CLI.
 
-## Running unit tests
+## Rodando o Projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Clone o repositório
 
-## Running end-to-end tests
+    git clone https://github.com/Claytonrss/marvel-heroes.git
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Acesse a pasta do repositório
 
-## Further help
+    cd marvel-heroes
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Instale todas as dependências utilizando os comandos
+
+    npm install
+
+Inicie o servidor de local
+
+    npm start
+
+Agora você pode acessar o servidor em [http://localhost:4200](http://localhost:4200/)
+
+## Autor
+
+<a href="https://claytonrss.github.io/">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/33030911?v=4" width="100px;" alt=""/>
+ <br />
+ 
+Feito com ❤️ por <a href="https://claytonrss.github.io/" title="Clayton Rafael">Clayton Rafael</a> 👋🏽 Entre em contato!
+
+[![](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&link=https://wa.me/5511965280345)](https://wa.me/5511965280345) [![Gmail Badge](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&link=mailtoclayton.rssouza@gmail.com)](mailto:clayton.rssouza@gmail.com) [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/clayton-rafael-62b908146/)](https://www.linkedin.com/in/clayton-rafael-62b908146/) [![Linkedin Badge](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&link=https://www.instagram.com/clayton.rssouza/)](https://www.instagram.com/clayton.rssouza/)

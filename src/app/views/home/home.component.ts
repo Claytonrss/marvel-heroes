@@ -87,6 +87,5 @@ export class HomeComponent implements OnInit {
 
   onSelect(id: number) {
     this._route.navigate(['/character', id]);
-    console.log(id);
   }
 }

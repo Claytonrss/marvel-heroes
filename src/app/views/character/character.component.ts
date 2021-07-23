@@ -31,7 +31,6 @@ export class CharacterComponent implements OnInit {
         const item = this.character.comics.items[i];
         this.getCollection(item.resourceURI);
       }
-      console.log(this.comics);
     });
   }
 

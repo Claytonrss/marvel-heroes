@@ -41,7 +41,7 @@
 <div class="paginate-container">
 <app-container>
   <div class="buttons-container" *ngIf="qtdPages">
-    <div class="prev-buttons">
+    <div class="prev-buttons" *ngIf="currentPage > 1">
       <button (click)="changePage(1)"><<</button>
       <button (click)="changePage(currentPage -1)"><</button>
     </div>
@@ -49,7 +49,7 @@
       <button  *ngFor="let page of pages" (click)="changePage(page)" [ngClass]="{'active': currentPage === page}"
       >{{page}}</button>
     </div>
-    <div class="next-buttons">
+    <div class="next-buttons" *ngIf="currentPage < qtdPages">
       <button (click)="changePage(currentPage + 1)">></button>
       <button (click)="changePage(qtdPages)">>></button>
     </div>

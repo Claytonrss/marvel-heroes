@@ -9,8 +9,8 @@ import { ResponseMarvel } from '../models/responseMarvel.model';
   providedIn: 'root',
 })
 export class CharacterService {
-  private publicKey = 'c1bb6f1fa9e8c65ed9e474d3cb528007';
-  private secretKey = '6da99370fd75a8c3274ba9c5bf82ea92eedad8f6';
+  private publicKey = 'c3dafa22b4de0bf870238254e3de9ff7';
+  private secretKey = 'c010fec262075e634d10edb5d68152e8b6f2c75a';
   private apiUrl = 'https://gateway.marvel.com/v1/public/characters';
 
   constructor(private httpClient: HttpClient) {}
