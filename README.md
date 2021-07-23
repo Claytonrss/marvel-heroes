@@ -1,19 +1,19 @@
-# TodoDev - A sua lista de tarefas
+# MARVEL-HEROES
 
 ## Demonstração
 
-![](marvel-heroes-print-01.png)
+![PRINT-01](https://github.com/Claytonrss/marvel-heroes/blob/master/marvel-heores-print-01.png?raw=true)
 
-![](marvel-heroes-print-02.png)
+![PRINT-02](https://github.com/Claytonrss/marvel-heroes/blob/master/marvel-heores-print-02.png?raw=true)
 
 ## Tecnologias utilizadas
 
-- CSS3
-- SASS
-- HTML5
 - Angular
 - Javascript
 - Typescript
+- HTML5
+- CSS3
+- SASS
 - API REST
 
 ## Pré-requisitos
