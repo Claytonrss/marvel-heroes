@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   getCharacters(params: string[] = []) {
     this.characterService.getResponseMarvel(params).subscribe((response) => {
-      this.characters = response.data.results;
+      this.characters = <Character[]>response.data.results;
       this.qtdPages = Math.ceil(response.data.total / response.data.limit) - 1;
 
       if (response.data.offset < response.data.limit) {

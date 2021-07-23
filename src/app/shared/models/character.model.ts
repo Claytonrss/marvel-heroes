@@ -1,3 +1,5 @@
+import { Thumbnail } from './thumbnail.model';
+
 export class Character {
   id: number;
   name: string;
@@ -7,11 +9,6 @@ export class Character {
   series: Container;
   events: Container;
   comics: Container;
-}
-
-class Thumbnail {
-  path: string;
-  extension: string;
 }
 
 class Container {

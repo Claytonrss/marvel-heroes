@@ -16,10 +16,10 @@ header {
 
 .card-top {
   margin: 0 auto;
-  background: $white;
   display: grid;
   grid-template-columns: 400px 1fr;
   margin-top: 40px;
+  background: $white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -58,6 +58,44 @@ header {
   }
 }
 
+.comics-container {
+  margin-top: 40px;
+  width: 100%;
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  .comics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 1rem;
+
+    .comic {
+      text-align: center;
+      width: 200px;
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 1rem;
+      background: $white;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius: 0.5rem;
+      overflow: hidden;
+
+      h3 {
+        margin-bottom: 1rem;
+      }
+
+      img {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+    }
+  }
+}
 // MOBILE
 @media (max-width: 800px) {
   .card-top {

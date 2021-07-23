@@ -23,4 +23,14 @@
       <span class="copy">©2021 MARVEL</span>
     </div>
   </section>
+
+  <section class="comics-container">
+    <h2>Comics</h2>
+    <div class="comics" *ngIf="comics">
+      <div class="comic" *ngFor="let comic of comics" title="{{comic.title}}">
+        <h3>{{comic.title.substring(0,20)}}</h3>
+        <img [src]="comic.thumbnail.path + '/detail.' + comic.thumbnail.extension" [alt]="comic.title">
+      </div>
+    </div>
+  </section>
 </app-container>

@@ -37,4 +37,13 @@ export class CharacterService {
     let url = `${this.apiUrl}/${id}?ts=${ts}&apikey=${this.publicKey}&hash=${hash}`;
     return this.httpClient.get<ResponseMarvel>(url);
   }
+
+  getCollection(url: string): Observable<ResponseMarvel> {
+    const md5 = new Md5();
+    const ts = new Date().getTime();
+    const stringToHash = ts + this.secretKey + this.publicKey;
+    const hash = md5.appendStr(stringToHash).end();
+    let _url = `${url}?ts=${ts}&apikey=${this.publicKey}&hash=${hash}`;
+    return this.httpClient.get<ResponseMarvel>(_url);
+  }
 }
