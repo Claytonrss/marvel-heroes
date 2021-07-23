@@ -3,8 +3,10 @@ export class Character {
   name: string;
   description: string;
   thumbnail: Thumbnail;
+  stories: Container;
   series: Container;
   events: Container;
+  comics: Container;
 }
 
 class Thumbnail {

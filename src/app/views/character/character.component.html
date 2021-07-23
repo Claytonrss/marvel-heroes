@@ -1,0 +1,26 @@
+<header>
+  <a [routerLink]="['']">← BACK</a>
+  <h1>MARVEL-HEROES</h1>
+  <p>DETAILS</p>
+</header>
+<app-container>
+  <section *ngIf="character" class="card-top">
+    <div class="photo">
+      <img [src]="character.thumbnail.path + '/detail.' + character.thumbnail.extension" [alt]="character.name">
+    </div>
+    <div class="description">
+      <h2>{{character.name}}</h2>
+      <p>{{character.description}}</p>
+      <p>
+        Available in:</p>
+        <ul>
+          <li>- {{character.events.available}} Events</li>
+          <li>- {{character.series.available}} Series</li>
+          <li>- {{character.stories.available}} Stories</li>
+          <li>- {{character.comics.available}} Comics</li>
+        </ul>
+      
+      <span class="copy">©2021 MARVEL</span>
+    </div>
+  </section>
+</app-container>

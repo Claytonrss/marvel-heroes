@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Md5 } from 'ts-md5/dist/md5';
+import { Character } from '../models/character.model';
 import { ResponseMarvel } from '../models/responseMarvel.model';
 
 @Injectable({
@@ -25,6 +26,15 @@ export class CharacterService {
       url += `&${params[i]}`;
     }
 
+    return this.httpClient.get<ResponseMarvel>(url);
+  }
+
+  getCharacterById(id: string): Observable<ResponseMarvel> {
+    const md5 = new Md5();
+    const ts = new Date().getTime();
+    const stringToHash = ts + this.secretKey + this.publicKey;
+    const hash = md5.appendStr(stringToHash).end();
+    let url = `${this.apiUrl}/${id}?ts=${ts}&apikey=${this.publicKey}&hash=${hash}`;
     return this.httpClient.get<ResponseMarvel>(url);
   }
 }

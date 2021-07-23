@@ -1,0 +1,67 @@
+@import "../../shared/scss/variables";
+
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  background: $smoke;
+  color: $snow;
+  font-weight: 500;
+
+  a {
+    color: $snow;
+    text-decoration: none;
+  }
+}
+
+.card-top {
+  margin: 0 auto;
+  background: $white;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  margin-top: 40px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  .photo {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+
+  .description {
+    padding: 2rem;
+    position: relative;
+    color: $dark-smoke;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      margin-top: 1rem;
+      line-height: 1.2rem;
+    }
+    ul {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.3rem;
+    }
+
+    .copy {
+      display: block;
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+    }
+  }
+}
+
+// MOBILE
+@media (max-width: 800px) {
+  .card-top {
+    max-width: 400px;
+    grid-template-columns: 1fr;
+  }
+}
