@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Character } from 'src/app/shared/models/character.model';
 import { CharacterService } from 'src/app/shared/service/character.service';
 
@@ -14,7 +15,10 @@ export class HomeComponent implements OnInit {
   pages: Array<number> = [];
   limit: number = 10;
 
-  constructor(public characterService: CharacterService) {}
+  constructor(
+    private characterService: CharacterService,
+    private _route: Router
+  ) {}
 
   ngOnInit(): void {
     this.getCharacters([]);
@@ -79,5 +83,10 @@ export class HomeComponent implements OnInit {
     if (event.key === 'Enter' || (<HTMLInputElement>event.target).value == '') {
       this.searchCharacters();
     }
+  }
+
+  onSelect(id: number) {
+    this._route.navigate(['/character', id]);
+    console.log(id);
   }
 }
